@@ -1,3 +1,3 @@
-var Todo = Backbone.Model.extend({
+var Item = Backbone.Model.extend({
 	url: "/new"
 });
