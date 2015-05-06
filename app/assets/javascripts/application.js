@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
+//= require lib/handlebars-v3.0.3
 //= require lib/underscore
 //= require lib/backbone
-//= require lib/marionette
 //= require_tree .

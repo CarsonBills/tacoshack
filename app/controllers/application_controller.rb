@@ -8,17 +8,25 @@ class ApplicationController < ActionController::Base
   end
 
   def new
+    number = params["number"].to_i
     items = Item.all.map do |item|
       item.name
     end
-    modifiers = Modifier.all.map do |modifier|
-      modifier.modifier
+    modifiers = Modifier.all.map do |word|
+      word.modifier
     end
-    adjectives = Adjective.all.map do |adjective|
-      adjective.adjective
+    adjectives = Adjective.all.map do |word|
+      word.adjective
     end
-      {adjectives: adjectives[(rand(0-adjectives.count))],
-      item: items[(rand(0-items.count))],
-      modifier: modifiers[(rand(0-modifiers.count))]}.to_json
+    str = ""
+    number.times do
+      str << adjectives[(rand(0...adjectives.count))] + ", "
+    end
+        @data = {
+        adjectives: str,
+        item: items[(rand(0...items.count))],
+        modifier: modifiers[(rand(0...modifiers.count))]
+      }
+      render json: @data
   end
 end
