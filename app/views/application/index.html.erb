@@ -1,18 +1,15 @@
 <div id="wrap">
 	<div id="header-region"></div>
 	<div id="main-region" class="container">
-		<%= @item %>
+		<div id="message">
+			<h1> Click to Generate a menu item </h1>
+		</div>
+		<div id="generate"></div>
 	</div>
 	<div id="push"></div>
 </div>
 <div id="footer-region"></div>
 
-
-<script id='menu-item-template' type="text/x-handlebars-template">
-	<div id='menu_item'>
-		<h1>{{menu_item}}</h1>
-	</div>
-</script>
 
 <script id='todo-item-template' type="text/x-handlebars-template">
 	<div id='todo_item'>
@@ -24,92 +21,15 @@
 
 <script>
 
-
-var Todo = Backbone.Model.extend({
-	url: "/new"
-});
-var todoModel = new Todo({
-	todo_item: "Testing"
-});
-
-var TodoView = Backbone.View.extend({
-	model: Todo,
-	el: "#main-region",
-	template: Handlebars.compile($("#todo-item-template").html()),
-	render: function() {
-		this.$el.html(this.template(this.model.toJSON()));
-	}
-});
+var todoModel = new Todo({});
 var todoView = new TodoView({
 	model: todoModel
-})
-
+});
 var number = $("select.delicious").val()
-	|| Math.floor(Math.random() * (5 - 1)) + 1;
+|| Math.floor(Math.random() * (5 - 1)) + 1;
+	
+	$(function(){
+		buttonPress()
+	});
 
-function fetchItem(){
-	todoModel.fetch({
-		data: $.param({
-			number: number
-		}),
-		success: function(){
-			todoView.render(),
-			console.log(todoView.model.toJSON())
-		}
-	})
-}
-
-fetchItem()
-
-console.log(todoModel)
-// var Item = Backbone.Model.extend({});
-
-// var ItemList = Backbone.Collection.extend({
-// 	url: "/new",
-// 	model: Item,
-// });
-
-// var item = new Item
-// var items =  new ItemList();
-
-// var ItemView = Backbone.View.extend({
-// 	template: Handlebars.compile($("#menu-item-template").html()),
-// 	render: function(){
-// 		this.$el.html(this.template(this.model.toJSON()));
-
-// 		return this;
-// 	}
-// });
-
-// var itemView = new ItemView({ model: item });
-
-// var ItemListView = Backbone.View.extend({
-// 	render: function(){
-// 		this.$el.empty();
-
-// 		var item = this.model
-// 		var item_view = new ItemView({model: item});
-// 		this.$el.append(item_view.render().$el);
-
-// 		return this;
-// 	}
-// });
-
-// 	$(function (){
-// 		itemListView = new ItemListView
-// 		console.log(itemListView.model)
-// 		items.fetch({
-// 	    success: function(){
-// 	    	itemListView.render()
-// 	      console.log(items.models[0].attributes.item)
-// 	    }        
-// 		})
-// 	});
-
-
-	// var source   = $("#menu-item-template").html();
-	// var template = Handlebars.compile(source);
-	// var context = {menu_item: "Test"};
-	// var html    = template(context);
-	// $('#main-region').html(html)
 </script>
