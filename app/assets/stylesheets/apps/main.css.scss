@@ -1,7 +1,25 @@
-body { background-color: lightblue;}
+body { 
+	background-color: black;
+	font-family: "Luckiest Guy", cursive;
+	color: white;
+}
+
+div.header {
+	margin-top: 1em;
+	margin-bottom: 5em;
+	text-align: center;
+}
+div#main-region {
+	text-align: center;
+	width: 55%;
+}
 
 #generate {
 	background-color: red;
 	height: 50px;
 	width: 50px;
+}
+
+img.logo {
+	height: 150px;
 }

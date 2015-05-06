@@ -2,7 +2,7 @@
 	<div id="header-region"></div>
 	<div id="main-region" class="container">
 		<div id="message">
-			<h1> Click to Generate a menu item </h1>
+			<h1> Click Taco Generate a menu item </h1>
 		</div>
 		<div id="select">
 			<select id="delicious">
@@ -16,7 +16,6 @@
 				<option value=4>Life Ruiningly Delicious</option>
 			</select>
 		</div>
-		<div id="generate"></div>
 	</div>
 	<div id="push"></div>
 </div>
@@ -29,7 +28,23 @@
 	</div>
 </script>
 
+<script id="header-template" type="text/x-handlebars-template">
+	<div class="header">
+		<div class="tacoshack">
+			<h1>{{title}}</h1>
+		</div>
+		<div class="logo">
+			<img src="assets/{{logo}}", class="logo">
+		</div>
+	</div>
+</script>
+
 <script>
+
+var header = new Header();
+var headerView = new HeaderView({
+	model: header
+})
 
 var itemModel = new Item({});
 var itemView = new ItemView({
@@ -37,6 +52,7 @@ var itemView = new ItemView({
 });
 
 	$(function(){
+		renderHeader()
 		buttonPress()
 	});
 

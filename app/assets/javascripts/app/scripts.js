@@ -11,7 +11,11 @@ function fetchItem(){
 	})
 }
 function buttonPress(){
-	$("#generate").on("click", function(e){
+	$("div.logo").on("click", function(e){
 		fetchItem()
 	});
+}
+function renderHeader(){
+	headerView.render()
+	console.log(headerView.model.toJSON())
 }
