@@ -1,5 +1,5 @@
 function fetchItem(){
-	var number = parseInt($("select#delicious").val())
+	var number = parseInt($("select").val())
 	itemModel.fetch({
 		data: $.param({
 			number: number
@@ -11,8 +11,12 @@ function fetchItem(){
 	})
 }
 function buttonPress(){
-	$("div.logo").on("click", function(e){
+	$("img.logo").on("click", function(e){
 		fetchItem()
+		$("img.logo").addClass("animated tada");
+		setTimeout(function(){
+			$("img.logo").removeClass("animated tada");
+		}, 1000);
 	});
 }
 function renderHeader(){
