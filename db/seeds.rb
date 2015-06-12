@@ -127,3 +127,6 @@ end
 adjectives.each do |adjective|
   Adjective.create(adjective: adjective)
 end
+
+User.create(:username => "Admin")
+User.create(:username => "Carson")
