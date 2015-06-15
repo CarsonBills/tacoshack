@@ -16,10 +16,15 @@ function buttonPress(){
 		$("img.logo").addClass("animated tada");
 		setTimeout(function(){
 			$("img.logo").removeClass("animated tada");
+			renderSaveMenuItem();
 		}, 1000);
 	});
 }
 function renderHeader(){
 	headerView.render()
 	console.log(headerView.model.toJSON())
+}
+
+function renderSaveMenuItem(){
+	
 }
