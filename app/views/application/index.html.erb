@@ -16,6 +16,7 @@
 				<option value=4>Life Ruiningly Delicious</option>
 			</select>
 		</div>
+		<div class="save-item"></div>
 	</div>
 	<div id="push"></div>
 </div>
@@ -24,7 +25,7 @@
 
 <script id='menu-item-template' type="text/x-handlebars-template">
 	<div id='menu_item'>
-		<h2>{{adjectives}} {{item}} {{modifier}}</h2>
+		<h2 id="menu_item">{{adjectives}} {{item}} {{modifier}}</h2>
 	</div>
 </script>
 
@@ -39,8 +40,8 @@
 	</div>
 </script>
 
-<script id="save-item" type="text/x-handlebars-template">
-
+<script id="save-item" type="text/html">
+	<h2>Save Item to Menu</h2>
 </script>
 
 <script>
