@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  skip_before_filter :verify_authenticity_token, only: [:item]
 
   def index
 
@@ -28,5 +29,11 @@ class ApplicationController < ActionController::Base
         modifier: modifiers[(rand(0...modifiers.count))]
       }
       render json: @data
+  end
+
+  def item
+    current_user = User.find(4)
+    MenuItem.create({user_id: current_user.id, menu_item: params[:menu_item].strip})
+    render :nothing => true, :status => 200, :content_type => 'text/html'
   end
 end

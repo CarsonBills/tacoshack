@@ -28,15 +28,18 @@ function renderHeader(){
 
 function renderSaveMenuItem(){
 	$(".save-item").append($("#save-item").html());
-	getMenuItem();
+	$(".save-item").on("click", function(e){
+		getMenuItem();
+	});
 }
 
 function getMenuItem(){
 	var menuItem = $("h2#menu_item").html()
 	$.ajax({
-		url : "/menuitem",
+		url : "/",
 		type : "post",
 		data : {menu_item: menuItem}
 	});
-	console.log(menuItem)
+	$(".save-item").empty();
+	$(".save-item").append($("#saved").html());
 }
