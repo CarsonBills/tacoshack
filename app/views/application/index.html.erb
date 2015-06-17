@@ -17,6 +17,7 @@
 			</select>
 		</div>
 		<div class="save-item"></div>
+		<div class="view_menu"></div>
 	</div>
 	<div id="push"></div>
 </div>
@@ -46,6 +47,10 @@
 
 <script id="saved" type="text/html">
 	<h2>Saved!</h2>
+</script>
+
+<script id="view_menu" type="text/html">
+	<%= link_to "View Menu", controller: "application", action: "fullmenu" %>
 </script>
 
 <script>

@@ -42,4 +42,6 @@ function getMenuItem(){
 	});
 	$(".save-item").empty();
 	$(".save-item").append($("#saved").html());
+	$(".view_menu").empty();
+	$(".view_menu").append($("#view_menu").html());
 }

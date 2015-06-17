@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   post "/" => "application#item"
 
+  get "/fullmenu" => "application#fullmenu"
+
   resources :sessions
 
   resources :users

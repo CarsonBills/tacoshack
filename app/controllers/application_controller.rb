@@ -32,8 +32,11 @@ class ApplicationController < ActionController::Base
   end
 
   def item
-    current_user = User.find(4)
+    current_user = User.create
     MenuItem.create({user_id: current_user.id, menu_item: params[:menu_item].strip})
     render :nothing => true, :status => 200, :content_type => 'text/html'
+  end
+
+  def fullmenu
   end
 end
