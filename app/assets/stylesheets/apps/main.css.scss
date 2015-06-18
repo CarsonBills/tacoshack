@@ -4,6 +4,12 @@ body {
 	color: white;
 }
 
+a, a:hover, a:visited, a:active {
+	text-decoration: none;
+	color: white;
+	font-size: 2em;
+}
+
 div.header {
 	margin-top: 2em;
 	margin-bottom: 3em;
@@ -47,5 +53,4 @@ img.logo {
   width: 50%;
   cursor: pointer;
 }
-
 

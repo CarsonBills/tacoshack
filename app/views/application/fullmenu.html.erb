@@ -1,1 +1,14 @@
-Full Menu Test
+<div class="full_menu">
+	<div class="full_menu_header">
+		<h1> Carson's Taco Shack </h1>
+		<h2> Tonight's Menu: </h2>
+	</div>
+
+	<div class="food">
+
+		<% @user.menu_items.each do |item| %>
+			<p><%= item %> </p>
+		<%end%>
+
+	</div>
+</div>

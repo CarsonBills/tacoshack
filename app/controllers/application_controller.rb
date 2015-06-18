@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   skip_before_filter :verify_authenticity_token, only: [:item]
 
+  def current_user
+    return unless session[:user_id]
+    @current_user ||= User.find(session[:user_id])
+  end
+
   def index
 
   end
@@ -32,8 +37,8 @@ class ApplicationController < ActionController::Base
   end
 
   def item
-    current_user = User.create
-    MenuItem.create({user_id: current_user.id, menu_item: params[:menu_item].strip})
+    test = session
+    MenuItem.create({menu_item: params[:menu_item].strip})
     render :nothing => true, :status => 200, :content_type => 'text/html'
   end
 
