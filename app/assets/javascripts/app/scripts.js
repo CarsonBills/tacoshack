@@ -27,7 +27,7 @@ function renderHeader(){
 }
 
 function renderSaveMenuItem(){
-	$(".save-item").append($("#save-item").html());
+	$(".save-form").append($("#save-item").html());
 	$(".save-item").on("click", function(e){
 		getMenuItem();
 	});
@@ -40,8 +40,8 @@ function getMenuItem(){
 		type : "post",
 		data : {menu_item: menuItem}
 	});
-	$(".save-item").empty();
-	$(".save-item").append($("#saved").html());
+	$(".save-form").empty();
+	$(".save-form").append($("#saved").html());
 	$(".view_menu").empty();
 	$(".view_menu").append($("#view_menu").html());
 }

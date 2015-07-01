@@ -16,7 +16,8 @@
 				<option value=4>Life Ruiningly Delicious</option>
 			</select>
 		</div>
-		<div class="save-item"></div>
+		<div class="save-form"></div>
+
 		<div class="view_menu"></div>
 	</div>
 	<div id="push"></div>
@@ -42,7 +43,8 @@
 </script>
 
 <script id="save-item" type="text/html">
-	<h2>Save Item to Menu</h2>
+	<div class="save-item"><h2>Save Item to Menu</h2></div>
+	<%= render "users/login" unless current_user %>
 </script>
 
 <script id="saved" type="text/html">

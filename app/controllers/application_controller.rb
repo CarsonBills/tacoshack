@@ -4,13 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   skip_before_filter :verify_authenticity_token, only: [:item]
 
-  def current_user
-    return unless session[:user_id]
-    @current_user ||= User.find(session[:user_id])
-  end
-
   def index
-
   end
 
   def new
@@ -28,7 +22,7 @@ class ApplicationController < ActionController::Base
     number.times do
       str << adjectives[(rand(0...adjectives.count))] + ", "
     end
-        @data = {
+      @data = {
         adjectives: str,
         item: items[(rand(0...items.count))],
         modifier: modifiers[(rand(0...modifiers.count))]
