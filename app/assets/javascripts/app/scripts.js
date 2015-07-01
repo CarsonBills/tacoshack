@@ -29,6 +29,7 @@ function renderHeader(){
 function renderSaveMenuItem(){
 	$(".save-form").append($("#save-item").html());
 	$(".save-item").on("click", function(e){
+		createUser();
 		getMenuItem();
 	});
 }
@@ -44,4 +45,13 @@ function getMenuItem(){
 	$(".save-form").append($("#saved").html());
 	$(".view_menu").empty();
 	$(".view_menu").append($("#view_menu").html());
+}
+
+function createUser(){
+	var newUser = $("input#username").val()
+	$.ajax({
+		url : "/users",
+		type : "post",
+		data : {username: newUser}
+	});
 }

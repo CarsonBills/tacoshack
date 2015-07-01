@@ -31,7 +31,6 @@ class ApplicationController < ActionController::Base
   end
 
   def item
-    test = session
     MenuItem.create({menu_item: params[:menu_item].strip})
     render :nothing => true, :status => 200, :content_type => 'text/html'
   end
