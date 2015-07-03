@@ -11,6 +11,8 @@ function fetchItem(){
 	})
 }
 function buttonPress(){
+	$("#message").show()
+	$("#select").show()
 	$("img.logo").on("click", function(e){
 		$("div.view_menu").empty();
 		$("div.save-form").empty();
