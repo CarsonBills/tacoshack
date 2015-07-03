@@ -43,7 +43,7 @@
 </script>
 
 <script id="save-item" type="text/html">
-	<div class="save-item"><h2>Save Item to Menu</h2></div>
+	<div class="create-name"><h2>Name your Taco Shack</h2></div>
 	<%= render "users/login" unless current_user %>
 </script>
 
@@ -68,8 +68,11 @@ var itemView = new ItemView({
 });
 
 	$(function(){
-		renderHeader()
-		buttonPress()
+		// renderHeader()
+		// buttonPress()
+		$("#message").hide()
+		$("#select").hide()
+		$(".save-form").append($("#save-item").html());
 	});
 
 </script>

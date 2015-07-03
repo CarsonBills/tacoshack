@@ -12,7 +12,8 @@ function fetchItem(){
 }
 function buttonPress(){
 	$("img.logo").on("click", function(e){
-	$(".save-item").empty();
+		$("div.view_menu").empty();
+		$("div.save-form").empty();
 		fetchItem();
 		$("img.logo").addClass("animated tada");
 		setTimeout(function(){
@@ -28,7 +29,7 @@ function renderHeader(){
 
 function renderSaveMenuItem(){
 	$(".save-form").append($("#save-item").html());
-	$(".save-item").on("click", function(e){
+	$(".create-name").on("click", function(e){
 		createUser();
 		getMenuItem();
 	});
@@ -41,9 +42,7 @@ function getMenuItem(){
 		type : "post",
 		data : {menu_item: menuItem}
 	});
-	$(".save-form").empty();
 	$(".save-form").append($("#saved").html());
-	$(".view_menu").empty();
 	$(".view_menu").append($("#view_menu").html());
 }
 
