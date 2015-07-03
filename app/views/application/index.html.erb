@@ -1,5 +1,8 @@
 <div id="wrap">
-	<div id="header-region"></div>
+	<div id="header-region">
+		<div class="create-name"><h2>Name your Taco Shack</h2></div>
+		<%= text_field_tag(:username, nil, class: "form-control", placeholder: "Enter Name") %>
+	</div>
 	<div id="main-region" class="container">
 		<div id="message">
 			<h2> Click Taco Generate a menu item </h2>
@@ -42,7 +45,7 @@
 	</div>
 </script>
 
-<script id="save-item" type="text/html">
+<script id="create-name" type="text/html">
 	<div class="create-name"><h2>Name your Taco Shack</h2></div>
 	<%= render "users/login" unless current_user %>
 </script>
@@ -72,7 +75,7 @@ var itemView = new ItemView({
 		// buttonPress()
 		$("#message").hide()
 		$("#select").hide()
-		$(".save-form").append($("#save-item").html());
+		// $("#header-region").append($("#create-name").html());
 	});
 
 </script>
