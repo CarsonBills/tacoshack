@@ -11,8 +11,7 @@ function fetchItem(){
 	})
 }
 function buttonPress(){
-	$("#message").show()
-	$("#select").show()
+	showMessage()
 	$("img.logo").on("click", function(e){
 		$("div.view_menu").empty();
 		$("div.save-form").empty();
@@ -23,6 +22,11 @@ function buttonPress(){
 			renderSaveMenuItem();
 		}, 1000);
 	});
+}
+
+function showMessage(){
+	$("#message").show()
+	$("#select").show()
 }
 function renderHeader(){
 	headerView.render()
